@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBStock - Registro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo">📦 BBStock</div>
+      <span class="breadcrumb">Dashboard > Registro de Movimentação</span>
+    </div>
+    <div class="navbar-right">
+      <input type="text" class="search-bar" placeholder="Buscar itens...">
+      <button class="icon-btn">🔔<span class="notification-badge">3</span></button>
+      <div class="user-info">
+        <div class="avatar">JS</div>
+        <span>João Silva</span>
+      </div>
+      <button class="icon-btn" onclick="window.location.href='dashboard.html'">🏠</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header mb-16">
+      <h1 class="page-title">📦 Registro de Movimentação</h1>
+      <p style="color: var(--text-secondary);">Registre entradas e saídas de itens do estoque</p>
+    </div>
+
+    <div class="card" style="max-width: 900px; margin: 0 auto;">
+      <form>
+        <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 2px solid var(--border);">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <span>🔄</span>
+            <span>Tipo de Movimentação</span>
+          </h3>
+
+          <div style="display: flex; gap: 16px;">
+            <label style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; border: 2px solid var(--ok); border-radius: 10px; cursor: pointer; flex: 1; justify-content: center;">
+              <input type="radio" name="tipo" value="entrada" checked>
+              <span style="font-size: 20px;">📥</span>
+              <span>ENTRADA</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; border: 2px solid var(--danger); border-radius: 10px; cursor: pointer; flex: 1; justify-content: center;">
+              <input type="radio" name="tipo" value="saida">
+              <span style="font-size: 20px;">📤</span>
+              <span>SAÍDA</span>
+            </label>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: 2px solid var(--border);">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <span>📋</span>
+            <span>Informações do Item</span>
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+            <div class="form-group">
+              <label class="form-label">Código do Item *</label>
+              <input type="text" class="form-input" placeholder="Ex: A-007" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Local *</label>
+              <select class="form-select" required>
+                <option value="">Selecione o local</option>
+                <option>SP-01 - Centro Logístico</option>
+                <option>SP-02 - Zona Sul</option>
+                <option>SP-03 - Zona Oeste</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div class="form-group">
+              <label class="form-label">Descrição do Item *</label>
+              <input type="text" class="form-input" placeholder="Ex: Processador Intel Xeon" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Quantidade *</label>
+              <input type="number" class="form-input" value="1" min="1" required>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 32px;">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <span>📝</span>
+            <span>Detalhes da Movimentação</span>
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+            <div class="form-group">
+              <label class="form-label">Data da Movimentação *</label>
+              <input type="date" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Número da Nota Fiscal</label>
+              <input type="text" class="form-input" placeholder="Ex: 123456">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Observações</label>
+            <textarea class="form-textarea" placeholder="Adicione observações sobre esta movimentação..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <button type="button" class="btn btn-ghost" onclick="window.location.href='dashboard.html'">❌ Cancelar</button>
+          <button type="button" class="btn btn-secondary">💾 Salvar Rascunho</button>
+          <button type="submit" class="btn btn-primary">✅ Registrar Movimentação</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('✅ Movimentação registrada com sucesso!');
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>

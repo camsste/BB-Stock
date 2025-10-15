@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBStock - Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      background: var(--white);
+    }
+
+    .login-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .login-left {
+      flex: 0 0 40%;
+      background: linear-gradient(135deg, #003DA6 0%, #0B4BC0 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-left::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 230, 0, 0.1);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+    }
+
+    .login-left::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(246, 169, 216, 0.1);
+      border-radius: 50%;
+      bottom: -100px;
+      left: -100px;
+    }
+
+    .login-logo {
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 16px;
+      z-index: 1;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-tagline {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      z-index: 1;
+      font-weight: 300;
+    }
+
+    .login-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      background: var(--bg);
+    }
+
+    .login-card {
+      background: var(--white);
+      padding: 48px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(14, 26, 43, 0.12);
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .login-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .login-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      font-size: 18px;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .login-input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(0, 61, 166, 0.1);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 16px;
+    }
+
+    .login-btn:hover {
+      background: #0B4BC0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 61, 166, 0.3);
+    }
+
+    .login-links {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .login-link {
+      color: var(--pink);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .login-link:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 24px 0;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-left">
+      <div class="login-logo">BBStock</div>
+      <div class="login-tagline">Sistema Inteligente de Gestão de Estoque</div>
+    </div>
+
+    <div class="login-right">
+      <div class="login-card">
+        <h1 class="login-title">Bem-vindo de volta!</h1>
+        <p class="login-subtitle">Entre com suas credenciais para acessar o sistema</p>
+
+        <form>
+          <div class="input-group">
+            <label class="input-label">CPF</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" class="login-input" placeholder="000.000.000-00" maxlength="14">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">Senha</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input type="password" class="login-input" placeholder="Digite sua senha">
+            </div>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="remember">
+            <label for="remember" style="font-size: 14px; color: var(--text-secondary);">Lembrar-me</label>
+          </div>
+
+          <button type="button" class="login-btn" onclick="window.location.href='dashboard.html'">
+            ENTRAR →
+          </button>
+
+          <div class="login-links">
+            <a href="#" class="login-link">Esqueci minha senha</a>
+          </div>
+
+          <div class="divider">ou</div>
+
+          <div class="login-links">
+            <a href="#" class="login-link">Primeiro acesso? Cadastre-se</a>
+          </div>
+        </form>
+
+        <div class="login-footer">
+          © 2025 BBStock • Versão 2.0.1
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

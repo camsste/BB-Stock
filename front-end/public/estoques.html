@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBStock - Estoques</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo">📦 BBStock</div>
+      <span class="breadcrumb">Dashboard > Gestão de Estoques</span>
+    </div>
+    <div class="navbar-right">
+      <input type="text" class="search-bar" placeholder="Buscar item ou local...">
+      <button class="icon-btn">🔔<span class="notification-badge">3</span></button>
+      <div class="user-info">
+        <div class="avatar">JS</div>
+        <span>João Silva</span>
+      </div>
+      <button class="icon-btn" onclick="window.location.href='dashboard.html'">🏠</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="page-title">📍 Gestão de Estoques Multilocal</h1>
+
+    <div class="card" style="background: linear-gradient(135deg, var(--blue), #0B4BC0); color: white; margin: 24px 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">📍 Você está em:</div>
+          <div style="font-size: 20px; font-weight: 700;">Av. Paulista, 1578 - São Paulo, SP</div>
+        </div>
+        <button class="btn btn-secondary" style="background: white; color: var(--blue);">📱 Atualizar Localização</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px;">
+        <div style="background: rgba(255, 255, 255, 0.15); padding: 16px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 28px; font-weight: 700; margin-bottom: 4px;">8</div>
+          <div style="font-size: 13px; opacity: 0.9;">Locais Ativos</div>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.15); padding: 16px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 28px; font-weight: 700; margin-bottom: 4px;">1.247</div>
+          <div style="font-size: 13px; opacity: 0.9;">Total de Itens</div>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.15); padding: 16px; border-radius: 12px; text-align: center;">
+          <div style="font-size: 28px; font-weight: 700; margin-bottom: 4px;">R$ 2,3M</div>
+          <div style="font-size: 13px; opacity: 0.9;">Valor Total</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid var(--border);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="font-size: 32px;">🏢</div>
+          <div>
+            <h2 style="font-size: 20px; margin-bottom: 4px;">SP-01 - Centro Logístico</h2>
+            <div style="font-size: 13px; color: var(--text-secondary);">📍 2.3 km • R. Vergueiro, 1000 - Liberdade</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <span class="badge badge-critical">3 críticos</span>
+          <span class="badge badge-alert">2 alertas</span>
+          <span class="badge badge-ok">15 normais</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 80px 1fr 200px 120px auto; gap: 16px; padding: 16px; border-bottom: 1px solid var(--border); align-items: center;">
+        <div style="width: 80px; height: 80px; border-radius: 8px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 32px; border: 1px solid var(--border);">🖥️</div>
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 6px;">A-007 - PROCESSADOR INTEL XEON</h4>
+          <div style="font-size: 13px; color: var(--text-secondary);">CMM: 12/mês • Cobertura: 12 dias • Classe A</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; color: var(--text-secondary); display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span>Estoque: 5/20</span>
+            <span>25%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill red" style="width: 25%;"></div>
+          </div>
+        </div>
+        <span class="badge badge-critical">CRÍTICO</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Transferir</button>
+          <button class="btn btn-ghost" style="padding: 8px 16px; font-size: 13px;">Detalhes</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-3 gap-16 mt-24">
+      <button class="btn btn-primary">🔄 Solicitar Transferência</button>
+      <button class="btn btn-secondary">📊 Relatório Consolidado</button>
+      <button class="btn btn-ghost">🗺️ Visualizar no Mapa</button>
+    </div>
+  </div>
+</body>
+</html>

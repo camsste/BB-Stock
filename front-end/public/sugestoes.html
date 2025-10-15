@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBStock - Sugestões</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="logo">📦 BBStock</div>
+      <span class="breadcrumb">Dashboard > Sugestões de Compra</span>
+    </div>
+    <div class="navbar-right">
+      <input type="text" class="search-bar" placeholder="Buscar itens...">
+      <button class="icon-btn">🔔<span class="notification-badge">3</span></button>
+      <div class="user-info">
+        <div class="avatar">JS</div>
+        <span>João Silva</span>
+      </div>
+      <button class="icon-btn" onclick="window.location.href='dashboard.html'">🏠</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="flex-between mb-16">
+      <div>
+        <h1 class="page-title">💡 Sugestões de Compra Inteligentes</h1>
+        <p style="color: var(--text-secondary);">Baseado em IA e histórico de consumo</p>
+      </div>
+      <span class="badge badge-now">⚡ Atualizado há 5 min</span>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <div style="display: grid; grid-template-columns: 100px 1fr auto; gap: 24px; align-items: start;">
+        <div style="width: 100px; height: 100px; border-radius: 12px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 48px; border: 1px solid var(--border);">🖥️</div>
+
+        <div>
+          <h3 style="font-size: 18px; margin-bottom: 12px;">A-007 - PROCESSADOR INTEL XEON</h3>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+            <div style="font-size: 13px;">
+              <span style="color: var(--text-secondary); display: block; margin-bottom: 4px;">Estoque Atual</span>
+              <span style="font-weight: 600; font-size: 15px;">5 un</span>
+            </div>
+            <div style="font-size: 13px;">
+              <span style="color: var(--text-secondary); display: block; margin-bottom: 4px;">CMM</span>
+              <span style="font-weight: 600; font-size: 15px;">12/mês</span>
+            </div>
+            <div style="font-size: 13px;">
+              <span style="color: var(--text-secondary); display: block; margin-bottom: 4px;">Cobertura</span>
+              <span style="font-weight: 600; font-size: 15px;">12 dias</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="progress-bar" style="flex: 1;">
+              <div class="progress-fill red" style="width: 25%;"></div>
+            </div>
+            <span class="badge badge-critical">25% - CRÍTICO</span>
+          </div>
+        </div>
+
+        <div style="text-align: right;">
+          <span class="badge badge-critical" style="margin-bottom: 12px;">PRIORIDADE MÁXIMA</span>
+          <div style="font-size: 24px; font-weight: 700; color: var(--blue); margin: 12px 0;">Comprar: 15 un</div>
+          <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">
+            <div>Valor Unit: R$ 1.000,00</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--text);">Total: R$ 15.000,00</div>
+          </div>
+          <button class="btn btn-primary">✅ Confirmar Compra</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, var(--blue), #0B4BC0); color: white; margin-top: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3 style="font-size: 20px; margin-bottom: 8px;">📋 Resumo das Sugestões</h3>
+          <div>15 itens sugeridos para compra</div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">Valor Total Estimado</div>
+          <div style="font-size: 32px; font-weight: 700;">R$ 125.450,00</div>
+        </div>
+        <button class="btn btn-secondary" style="background: white; color: var(--blue);">📧 Enviar para Aprovação</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
