@@ -5,6 +5,6 @@ Desafio: Como substituir o uso de planilhas por uma solução inteligente?
 
 Integrantes: 
 - Camile Stefany
-- Thifanny 
-- João Victor
+- Thifanny Sistelos
+- João Victor Oliveira
 - Wectornanime Felipe 
