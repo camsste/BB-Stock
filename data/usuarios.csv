@@ -1,0 +1,3 @@
+id,cpf,senha,nome,cargo,localizacao
+1,12345678900,senha123,João Silva,Supervisor,SP-01
+2,98765432100,senha456,Maria Santos,Técnica,SP-02
