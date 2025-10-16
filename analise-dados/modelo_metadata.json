@@ -1,0 +1,9 @@
+{
+  "modelo": "RandomForest",
+  "r2_score": 0.826927045270656,
+  "mae": 3.743444752269027,
+  "rmse": 56.76294826330072,
+  "n_features": 19,
+  "n_samples_train": 4000,
+  "n_samples_test": 1000
+}
