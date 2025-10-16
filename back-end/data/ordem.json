@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "data_ordem": "2025-10-01",
+    "data_necessidade": "2025-10-15",
+    "observacao": "Urgente, solicitar com antecedência.",
+    "items": [
+      {
+        "codigo": "A001",
+        "classe": "Eletrônicos",
+        "descricao": "Monitor 24 polegadas",
+        "fornecedor": "Tech Supplies Ltda",
+        "local": "São Paulo",
+        "prazo": 5,
+        "valor": "1500.00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "data_ordem": "2025-10-05",
+    "data_necessidade": "2025-10-20",
+    "observacao": "Verificar compatibilidade com o modelo anterior.",
+    "items": [
+      {
+        "codigo": "B102",
+        "classe": "Móveis",
+        "descricao": "Mesa de escritório ergonômica",
+        "fornecedor": "Móveis Modernos S.A.",
+        "local": "Rio de Janeiro",
+        "prazo": 7,
+        "valor": "850.00"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "data_ordem": "2025-10-07",
+    "data_necessidade": "2025-10-25",
+    "observacao": "Necessário revisar especificações do item.",
+    "items": [
+      {
+        "codigo": "C555",
+        "classe": "Informática",
+        "descricao": "Teclado mecânico",
+        "fornecedor": "GamerTech",
+        "local": "Belo Horizonte",
+        "prazo": 3,
+        "valor": "400.00"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "data_ordem": "2025-10-10",
+    "data_necessidade": "2025-10-30",
+    "observacao": "Incluir software de gerenciamento.",
+    "items": [
+      {
+        "codigo": "D777",
+        "classe": "Software",
+        "descricao": "Sistema de Gestão Empresarial",
+        "fornecedor": "SoftSolutions",
+        "local": "Porto Alegre",
+        "prazo": 10,
+        "valor": "1200.00"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "data_ordem": "2025-10-12",
+    "data_necessidade": "2025-10-22",
+    "observacao": "Incluir instalação no local.",
+    "items": [
+      {
+        "codigo": "A021",
+        "classe": "Eletrônicos",
+        "descricao": "Projetor 4K",
+        "fornecedor": "TechVision",
+        "local": "São Paulo",
+        "prazo": 6,
+        "valor": "3500.00"
+      },
+      {
+        "codigo": "A022",
+        "classe": "Acessórios",
+        "descricao": "Tela de projeção",
+        "fornecedor": "TechVision",
+        "local": "São Paulo",
+        "prazo": 6,
+        "valor": "1200.00"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "data_ordem": "2025-10-15",
+    "data_necessidade": "2025-10-28",
+    "observacao": "Prioridade na entrega.",
+    "items": [
+      {
+        "codigo": "B110",
+        "classe": "Móveis",
+        "descricao": "Cadeira ergonômica",
+        "fornecedor": "Confort Móveis",
+        "local": "São Paulo",
+        "prazo": 5,
+        "valor": "950.00"
+      },
+      {
+        "codigo": "B112",
+        "classe": "Móveis",
+        "descricao": "Mesa de reuniões",
+        "fornecedor": "Confort Móveis",
+        "local": "São Paulo",
+        "prazo": 5,
+        "valor": "2200.00"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "data_ordem": "2025-10-18",
+    "data_necessidade": "2025-11-05",
+    "observacao": "Solicitar assistência técnica para instalação.",
+    "items": [
+      {
+        "codigo": "C235",
+        "classe": "Informática",
+        "descricao": "Laptop para desenvolvimento",
+        "fornecedor": "TechPro",
+        "local": "Belo Horizonte",
+        "prazo": 7,
+        "valor": "4500.00"
+      },
+      {
+        "codigo": "C236",
+        "classe": "Informática",
+        "descricao": "Mouse e teclado sem fio",
+        "fornecedor": "TechPro",
+        "local": "Belo Horizonte",
+        "prazo": 7,
+        "valor": "350.00"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "data_ordem": "2025-10-20",
+    "data_necessidade": "2025-10-30",
+    "observacao": "Necessário especificar versão do software.",
+    "items": [
+      {
+        "codigo": "D001",
+        "classe": "Software",
+        "descricao": "Antivírus Corporativo",
+        "fornecedor": "SecureTech",
+        "local": "Porto Alegre",
+        "prazo": 10,
+        "valor": "650.00"
+      },
+      {
+        "codigo": "D002",
+        "classe": "Software",
+        "descricao": "Licença de Backup",
+        "fornecedor": "SecureTech",
+        "local": "Porto Alegre",
+        "prazo": 10,
+        "valor": "1200.00"
+      }
+    ]
+  }
+]
