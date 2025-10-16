@@ -28,13 +28,13 @@ router.post("/", (req, res) => {
     return res.status(400).send("Código e saldo de manutenção são obrigatórios");
   }
 
-  estoque.push(novoItem);
+  estoqueData.push(novoItem);
   res.status(201).json(novoItem);
 });
 
 router.put("/:codigo", (req, res) => {
   const { codigo } = req.params;
-  const itemIndex = estoque.findIndex(i => i.codigo === codigo);
+  const itemIndex = estoqueData.findIndex(i => i.codigo === codigo);
   
   if (itemIndex === -1) {
     return res.status(404).send("Item não encontrado");
@@ -48,13 +48,13 @@ router.put("/:codigo", (req, res) => {
 
 router.delete("/:codigo", (req, res) => {
   const { codigo } = req.params;
-  const itemIndex = estoque.findIndex(i => i.codigo === codigo);
+  const itemIndex = estoqueData.findIndex(i => i.codigo === codigo);
   
   if (itemIndex === -1) {
     return res.status(404).send("Item não encontrado");
   }
 
-  estoque.splice(itemIndex, 1);
+  estoqueData.splice(itemIndex, 1);
   res.status(204).send();
 });
 
