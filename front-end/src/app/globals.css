@@ -1,0 +1,347 @@
+@import "tailwindcss";
+@import 'leaflet/dist/leaflet.css';
+
+/* Tema base (modo claro) */
+:root {
+  --background: #f5f7fa;
+  --foreground: #171717;
+}
+
+/* Variáveis e tokens do Tailwind v4 via @theme inline */
+@theme inline {
+  /* Cores de contexto */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Fontes (ajuste para suas fontes reais se estiver usando next/font) */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Paleta BBStock */
+  --color-primary: #1a237e;   /* Azul escuro */
+  --color-secondary: #00897b; /* Verde-azulado */
+  --color-accent: #ffa726;    /* Laranja */
+
+  /* Escalas auxiliares (opcional) */
+  --color-primary-600: #1f2a8a;
+  --color-primary-700: #16206d;
+  --color-secondary-600: #007a6f;
+  --color-secondary-700: #006d64;
+  --color-accent-600: #ff9800;
+  --color-accent-700: #fb8c00;
+
+  /* Utilitários visuais */
+  --shadow-card: 0 10px 25px -10px rgba(26, 35, 126, 0.25);
+  --radius-lg: 0.75rem;
+  --radius-xl: 0.9rem;
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Reset/estilos globais mínimos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+/* Acessibilidade focos visuais */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Links padrão */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-secondary-600);
+  text-decoration: underline;
+}
+
+/* Utilidades globais opcionais */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Exemplo de classes utilitárias que combinam tokens */
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(26, 35, 126, 0.08);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: var(--color-primary-700);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: #ffffff;
+}
+.btn-secondary:hover {
+  background: var(--color-secondary-700);
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  color: #1a237e;
+}
+.btn-accent:hover {
+  background: var(--color-accent-700);
+}
+
+/* Helpers de texto */
+.text-muted {
+  color: color-mix(in oklab, var(--color-foreground) 60%, transparent);
+}
+
+/* Layout base da aplicação (opcional) */
+.app-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--color-background);
+}
+
+/* Header e Sidebar exemplo (opcional) */
+.app-header {
+  backdrop-filter: saturate(180%) blur(8px);
+  background: color-mix(in oklab, var(--color-primary) 8%, white);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-primary) 15%, transparent);
+}
+
+.app-sidebar {
+  background: #ffffff;
+  border-right: 1px solid rgba(26, 35, 126, 0.08);
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 0.75rem;
+  }
+}
+
+/* Leaflet base fix */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #e8eefc; /* leve para não parecer “tela branca” enquanto carrega */
+  isolation: isolate;
+}
+
+/* Controles e popups acima do painel flutuante */
+.leaflet-control-container {
+  z-index: 400;
+}
+.leaflet-pane {
+  z-index: 300;
+}
+
+/* Painel flutuante sempre acima dos tiles, mas abaixo dos popups */
+.bbstock-map-panel {
+  z-index: 500;
+  pointer-events: auto;
+}
+
+/* Selects com fundo branco e foco visível */
+select {
+  background-color: #ffffff;
+  color: #0F1A2B;
+}
+select:focus {
+  outline: none;
+  border-color: #4E61F0 !important;
+  box-shadow: 0 0 0 3px rgba(107, 124, 255, 0.35);
+}
+select option {
+  color: #0F1A2B;
+  background: #ffffff;
+  padding: 6px 8px;
+}
+
+/* Placeholder mais legível */
+input::placeholder {
+  color: #6E7BA6 !important;
+  opacity: 1;
+}
+
+/* ===== MODO ALTO CONTRASTE PARA HISTÓRICOS ===== */
+.bb-contrast {
+  --bb-bg: #ffffff;
+  --bb-text: #0A0A0A;         /* preto */
+  --bb-head: #111827;         /* títulos */
+  --bb-muted: #1F2937;        /* cinza bem escuro */
+  --bb-border: #1E3A8A;       /* azul escuro */
+  --bb-row: #FFFFFF;          /* linha ímpar */
+  --bb-row-alt: #F3F7FF;      /* linha par */
+  --bb-hover: #E6EEFF;
+}
+
+.bb-contrast .bb-card {
+  background: var(--bb-bg) !important;
+  border: 2px solid var(--bb-border) !important;
+  border-radius: 14px !important;
+}
+
+.bb-contrast .bb-title {
+  color: var(--bb-head) !important;
+  font-weight: 800 !important;
+}
+
+.bb-contrast .bb-input, 
+.bb-contrast .bb-select {
+  height: 52px !important;
+  border: 2px solid var(--bb-border) !important;
+  color: var(--bb-text) !important;
+  background: #fff !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+}
+.bb-contrast .bb-input::placeholder,
+.bb-contrast .bb-select::placeholder { color: #374151 !important; opacity: 1 !important; }
+.bb-contrast .bb-input:focus, 
+.bb-contrast .bb-select:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.35) !important;
+}
+
+.bb-contrast table.bb-table {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  font-size: 16px !important;   /* AUMENTA FONTE DOS DADOS */
+  color: var(--bb-text) !important;
+  border: 2px solid var(--bb-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.bb-contrast .bb-table thead th {
+  background: #E6EEFF !important;
+  color: var(--bb-head) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  border-bottom: 2px solid var(--bb-border) !important;
+  padding: 12px 14px !important;
+}
+
+.bb-contrast .bb-table tbody td {
+  padding: 12px 14px !important;
+  color: var(--bb-text) !important;
+}
+
+.bb-contrast .bb-table tbody tr:nth-child(odd)  { background: var(--bb-row) !important; }
+bb-contrast .bb-table tbody tr:nth-child(even) { background: var(--bb-row-alt) !important; }
+.bb-contrast .bb-table tbody tr:hover { background: var(--bb-hover) !important; }
+
+.bb-contrast .bb-chip {
+  font-weight: 800 !important;
+  border: 2px solid currentColor !important;
+  padding: 4px 10px !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+}
+.bb-contrast .bb-chip--ok { color: #065F46; background: #D1FAE5; }
+.bb-contrast .bb-chip--warn { color: #92400E; background: #FFEAD5; }
+.bb-contrast .bb-chip--info { color: #0F2C93; background: #DBE5FF; }
+.bb-contrast .bb-chip--danger { color: #991B1B; background: #FFE4E6; }
+
+/* Botões */
+.bb-contrast .bb-btn {
+  background: #0F2C93 !important;
+  color: #fff !important;
+  border: 2px solid #0F2C93 !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  padding: 10px 14px !important;
+}
+.bb-contrast .bb-btn-ghost {
+  background: #fff !important;
+  color: #0F2C93 !important;
+  border: 2px solid var(--bb-border) !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  padding: 10px 14px !important;
+}
+
+/* Força texto escuro em células que herdavam opacidade/transparência */
+.bb-contrast .bb-table td, 
+.bb-contrast .bb-table th, 
+.bb-contrast .force-dark {
+  color: #0A0A0A !important;
+  opacity: 1 !important;
+}
+
+/* ==== Modal Moderno BBStock ==== */
+.bb-modal-overlay {
+  position: fixed; inset: 0; background: rgba(2, 6, 23, 0.48);
+  backdrop-filter: blur(3px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 60;
+  animation: bb-fade-in 160ms ease-out;
+}
+.bb-modal {
+  width: 100%; max-width: 720px;
+  background: #fff; border: 1px solid #E2E8F0; border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+  transform-origin: center;
+  animation: bb-zoom-in 160ms ease-out;
+}
+.bb-modal-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 16px 18px; border-bottom:1px solid #E2E8F0; background: #F8FAFC;
+}
+.bb-modal-title { font-weight: 700; color:#0F172A; letter-spacing:-0.01em; }
+.bb-modal-body { padding: 16px 18px; color:#0F172A; }
+.bb-modal-footer {
+  display:flex; gap:10px; justify-content:flex-end;
+  padding: 14px 18px; border-top:1px solid #E2E8F0; background:#FAFBFF;
+}
+@keyframes bb-fade-in { from{opacity:0} to{opacity:1} }
+@keyframes bb-zoom-in { from{opacity:0; transform:scale(.96)} to{opacity:1; transform:scale(1)} }
