@@ -19,6 +19,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/sugestoes', sugestoesRoutes);
 
+app.use(async (req, res) => {
+  res.status(404).json({ error: 'Rota não encontrada' });
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });

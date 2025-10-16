@@ -3,7 +3,7 @@ const { getItensBBTS } = require('../utils/csvReader');
 const { 
   calcularEstoqueDisponivel, 
   classificarStatusEstoque,
-  calcularEstoqueDefeituoso 
+  calcularEstoqueDefeituoso
 } = require('../utils/calculosEstoque');
 
 const router = express.Router();
