@@ -1,0 +1,19 @@
+[
+  {
+    "codigo": "ROXR-033849",
+    "saldo_manut": 0,
+    "provid_compras": 0,
+    "recebimento_esperado": 0,
+    "transito_manut": 0,
+    "stage_manut": 0,
+    "recepcao_manut": 0,
+    "pendente_ri": 0,
+    "pecas_teste_kit": 0,
+    "pecas_teste": 0,
+    "fornecedor_reparo": 0,
+    "laboratorio": 0,
+    "wr": 0,
+    "wrcr": 0,
+    "stage_wr": 0
+  }
+]
